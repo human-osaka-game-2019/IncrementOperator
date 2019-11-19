@@ -11,13 +11,15 @@ public:
 
 	CoordinateX& operator++() 
 	{ 
-
+		++value;
 		return *this;
 	}
 
 	CoordinateX& operator++(int) 
 	{ 
-		return *this;
+		CoordinateX tmp = *this;
+		++(*this);
+		return tmp;
 	}
 
 private:
