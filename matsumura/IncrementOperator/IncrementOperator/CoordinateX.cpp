@@ -6,9 +6,12 @@ CoordinateX::CoordinateX(int x)
 }
 
 CoordinateX& CoordinateX::operator++() {
+	++value;
 	return *this;
 }
 
 CoordinateX CoordinateX::operator++(int) {
-	return *this;
+	CoordinateX tmp = *this;
+	++(*this);
+	return tmp;
 }
