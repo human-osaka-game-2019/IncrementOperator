@@ -4,16 +4,16 @@
 
 TEST(PostfixIncrement, OperatorTest) {
 	CoordinateX x(0);
-	for (int i = 1; i < 10; ++i) {
-		x++;
-		EXPECT_EQ(x.GetValue(), i);
-	}
+	CoordinateX y(0);
+	
+	x = y++;
+	ASSERT_EQ(x.GetValue(), 0);
 }
 
 TEST(PrefixIncrement, OperatorTest) {
 	CoordinateX x(0);
-	for (int i = 1; i < 10; ++i) {
-		++x;
-		EXPECT_EQ(x.GetValue(), i);
-	}
+	CoordinateX y(0);
+	
+	x = ++y;
+	ASSERT_EQ(x.GetValue(), 1);
 }

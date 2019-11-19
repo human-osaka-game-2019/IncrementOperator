@@ -6,12 +6,16 @@ public:
 	explicit CoordinateX(int in_value):value(in_value) {}
 	int GetValue() { return value; }
 
-	CoordinateX operator++() {
-		//return CoordinateX(this->value += 1);
+	//Postfix
+	CoordinateX operator++(int x) {
+		CoordinateX tmp = *this;
+		this->value += 1;
+		return tmp;
 	}
 
-	CoordinateX operator++(int x) {
-		//return CoordinateX(this->value += 1);
+	//Prefix
+	CoordinateX operator++() {
+		return CoordinateX(this->value += 1);
 	}
 
 private:
