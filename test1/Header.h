@@ -2,22 +2,6 @@
 #define H_H_
 #include <iostream>
 
-class TicketMaker
-{
-public:
-
-	TicketMaker() = default;
-	~TicketMaker() = default;
-
-	int getNextTicket;
-
-	static TicketMaker& get_instance(){}
-
-
-private:
-	int ticket = 1000;
-	static TicketMaker* instance;
-};
 
 
 class CoordinateX
@@ -33,14 +17,13 @@ public:
 
 	CoordinateX operator++ (int)
 	{
-		CoordinateX temp = *this;
-		++* this;
-		return *this;
+		CoordinateX old = *this;
+		++*this;
+		return old;
 	}
-	
+
 private:
 	int x;
-	int old;
 
 
 };
