@@ -14,12 +14,18 @@ public:
 
 	CoordinateX& operator ++()
 	{
+		value = value + 1;
+
 		return *this;
 	}
 
 	CoordinateX operator++(int)
 	{
-		return *this;
+		CoordinateX old = *this;
+
+		++* this;
+
+		return old;
 	}
 
 };
