@@ -1,20 +1,25 @@
 #include "pch.h"
 #include "../Project1/Header.h"
 
-TEST(TestCaseName, TestName1) {
+TEST(TestCaseName, Postfix) {
+	//Arange
+	CoodinateX a(0);
+	//Act
+	CoodinateX b = a++;
 
-	CoodinateX x(0);
-
-	
-
-
-  EXPECT_EQ(x++, CoodinateX(0));
+	//Assert
+	EXPECT_EQ(a.Value(), 1);
+	EXPECT_EQ(b.Value(), 0);
 }
 
-TEST(TestCaseName, TestName2) {
+TEST(TestCaseName, Prefix) {
 
-	CoodinateX x(0);
+	//Arange
+	CoodinateX a(0);
+	//Act
+	CoodinateX b = ++a;
 
-
-	EXPECT_EQ(++x, CoodinateX(1));
+	//Assert
+	EXPECT_EQ(a.Value(), 1);
+	EXPECT_EQ(b.Value(), 1);
 }

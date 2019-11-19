@@ -28,9 +28,3 @@ private:
 	int value;
 
 };
-
-
-bool operator ==(CoodinateX lhs, CoodinateX rhs)
-{
-	return lhs.Value() == rhs.Value();
-}
