@@ -19,7 +19,7 @@ public:
 		return *this;
 	}
 
-	CoordinateX operator++(int)
+	CoordinateX operator ++(int)
 	{
 		CoordinateX old = *this;
 
